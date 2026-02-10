@@ -144,28 +144,6 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="px-4 pb-3 grid grid-cols-2 gap-3">
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-700/20 rounded-3xl p-5 relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="text-lg font-medium mb-1">управлять</div>
-              <div className="text-xs text-gray-400">в ТГ</div>
-            </div>
-            <div className="absolute bottom-4 right-4">
-              <Icon name="MessageSquare" size={48} className="text-blue-400/40" />
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-3xl p-5 relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="text-lg font-medium mb-1">защита</div>
-              <div className="text-xs text-gray-400">аккаунта и данных</div>
-            </div>
-            <div className="absolute bottom-4 right-4">
-              <Icon name="Shield" size={48} className="text-yellow-400/40" />
-            </div>
-          </div>
-        </div>
-
         <div className="flex justify-center gap-1 py-4">
           <div className="w-8 h-1 bg-white rounded-full" />
           <div className="w-1 h-1 bg-gray-600 rounded-full" />
