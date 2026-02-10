@@ -228,7 +228,7 @@ const Index = () => {
                 <div>вс</div>
               </div>
               
-              <div className="grid grid-cols-7 gap-3">
+              <div className="grid grid-cols-7 gap-3 mb-6">
                 {generateCalendarDays().map((item, index) => (
                   <div key={index} className="flex items-center justify-center">
                     {item.day ? (
@@ -245,9 +245,20 @@ const Index = () => {
                   </div>
                 ))}
               </div>
+
+              <div className="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <Icon name="TrendingUp" size={24} className="text-white" />
+                  </div>
+                  <p className="text-sm text-gray-200 leading-snug">
+                    Сегодня <span className="font-bold text-white">94%</span> пользователей оценили день как ценный
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-8 px-4">
+            <div className="mt-4 px-4">
               <button 
                 onClick={() => {
                   setShowFairness(false);
