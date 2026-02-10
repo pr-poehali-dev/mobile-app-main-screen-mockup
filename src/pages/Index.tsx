@@ -6,6 +6,7 @@ const Index = () => {
   const [showFairness, setShowFairness] = useState(false);
   const [showCompensation, setShowCompensation] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [selectedReasons, setSelectedReasons] = useState<string[]>([]);
 
   const generateCalendarDays = () => {
@@ -34,6 +35,39 @@ const Index = () => {
         : [...prev, reason]
     );
   };
+
+  if (showSuccess) {
+    return (
+      <div className="min-h-screen bg-[#1a1a1a] text-white flex items-center justify-center">
+        <div className="max-w-md mx-auto px-4">
+          <div className="bg-[#2a2a2a] rounded-3xl p-8 text-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6">
+              <Icon name="Check" size={40} className="text-white" />
+            </div>
+            
+            <h2 className="text-2xl font-bold mb-4">Спасибо за обратную связь!</h2>
+            
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              Мы обязательно учтём её, чтобы стать лучше для вас
+            </p>
+
+            <button 
+              onClick={() => {
+                setShowSuccess(false);
+                setShowFeedback(false);
+                setShowCompensation(false);
+                setShowFairness(false);
+                setSelectedReasons([]);
+              }}
+              className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 rounded-2xl text-lg font-semibold"
+            >
+              Вернуться на главную
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (showFeedback) {
     return (
@@ -131,9 +165,7 @@ const Index = () => {
             <button 
               onClick={() => {
                 setShowFeedback(false);
-                setShowCompensation(false);
-                setShowFairness(false);
-                setSelectedReasons([]);
+                setShowSuccess(true);
               }}
               className="w-full bg-white text-black py-4 rounded-2xl text-lg font-semibold"
             >
