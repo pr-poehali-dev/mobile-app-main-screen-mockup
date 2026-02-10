@@ -27,9 +27,7 @@ const CompensationScreen = ({ setShowCompensation, setShowFeedback }: Compensati
             </h2>
             
             <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl p-6 mb-6">
-              <p className="text-white text-center text-lg font-medium">
-                Хотите вернуть 20 бонусных рублей за эту ситуацию?
-              </p>
+              <p className="text-white text-center text-lg font-medium">Хотите вернуть абонентскую плату за сегодняшний день?</p>
             </div>
 
             <p className="text-gray-400 text-sm text-center mb-6 leading-relaxed">
