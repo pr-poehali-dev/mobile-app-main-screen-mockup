@@ -4,9 +4,10 @@ import Icon from '@/components/ui/icon';
 interface FairnessCalendarScreenProps {
   setShowFairness: Dispatch<SetStateAction<boolean>>;
   setShowSurvey: Dispatch<SetStateAction<boolean>>;
+  setShowHappy: Dispatch<SetStateAction<boolean>>;
 }
 
-const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey }: FairnessCalendarScreenProps) => {
+const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappy }: FairnessCalendarScreenProps) => {
   const generateCalendarDays = () => {
     const days = [];
     const today = new Date();
@@ -81,6 +82,10 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey }: FairnessCale
 
           <div className="mt-4 px-4 space-y-3">
             <button 
+              onClick={() => {
+                setShowFairness(false);
+                setShowHappy(true);
+              }}
               className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-2xl text-lg font-semibold"
             >
               билайн порадовал
