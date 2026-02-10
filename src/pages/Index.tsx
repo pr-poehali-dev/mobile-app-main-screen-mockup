@@ -3,6 +3,80 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
+  const [showFairness, setShowFairness] = useState(false);
+
+  const generateCalendarDays = () => {
+    const days = [];
+    const today = new Date();
+    const currentMonth = today.getMonth();
+    const currentYear = today.getFullYear();
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    
+    for (let i = 0; i < firstDay; i++) {
+      days.push({ day: null, active: false });
+    }
+    
+    for (let i = 1; i <= daysInMonth; i++) {
+      days.push({ day: i, active: i <= 7 });
+    }
+    
+    return days;
+  };
+
+  if (showFairness) {
+    return (
+      <div className="min-h-screen bg-[#1a1a1a] text-white pb-20">
+        <div className="max-w-md mx-auto">
+          <div className="px-4 pt-6 pb-4 flex items-center gap-4">
+            <button onClick={() => setShowFairness(false)} className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
+              <Icon name="ChevronLeft" size={24} />
+            </button>
+            <h1 className="text-xl font-semibold">справедливость связи</h1>
+          </div>
+
+          <div className="px-4 py-6">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold mb-2">Февраль 2026</h2>
+              <div className="grid grid-cols-7 gap-2 text-xs text-gray-400 mb-4">
+                <div>пн</div>
+                <div>вт</div>
+                <div>ср</div>
+                <div>чт</div>
+                <div>пт</div>
+                <div>сб</div>
+                <div>вс</div>
+              </div>
+              
+              <div className="grid grid-cols-7 gap-3">
+                {generateCalendarDays().map((item, index) => (
+                  <div key={index} className="flex items-center justify-center">
+                    {item.day ? (
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+                        item.active 
+                          ? 'bg-green-500 text-white' 
+                          : 'bg-[#2a2a2a] text-gray-400'
+                      }`}>
+                        {item.day}
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 px-4">
+              <button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 rounded-2xl text-lg font-semibold">
+                билайн огорчил
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white pb-20">
@@ -131,10 +205,13 @@ const Index = () => {
         </div>
 
         <div className="px-4 pb-3">
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl p-5 flex items-center justify-between">
+          <button 
+            onClick={() => setShowFairness(true)}
+            className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl p-5 flex items-center justify-between"
+          >
             <span className="text-lg font-semibold text-white">справедливость связи</span>
             <Icon name="ChevronRight" size={24} className="text-white" />
-          </div>
+          </button>
         </div>
 
         <div className="px-4 pb-3">
