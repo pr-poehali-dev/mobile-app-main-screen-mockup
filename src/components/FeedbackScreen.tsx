@@ -101,6 +101,13 @@ const FeedbackScreen = ({ selectedReasons, toggleReason, setShowFeedback, setSho
             </button>
           </div>
 
+          <div className="mb-6">
+            <textarea
+              placeholder="Расскажите подробнее, что вас огорчило..."
+              className="w-full bg-[#1a1a1a] text-white rounded-2xl p-4 min-h-[120px] resize-none placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+          </div>
+
           <button 
             onClick={() => {
               setShowFeedback(false);
