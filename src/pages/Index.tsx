@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MainScreen from '@/components/MainScreen';
 import FairnessCalendarScreen from '@/components/FairnessCalendarScreen';
+import DisappointmentSurvey from '@/components/DisappointmentSurvey';
 import CompensationScreen from '@/components/CompensationScreen';
 import FeedbackScreen from '@/components/FeedbackScreen';
 import SuccessScreen from '@/components/SuccessScreen';
@@ -8,6 +9,7 @@ import SuccessScreen from '@/components/SuccessScreen';
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [showFairness, setShowFairness] = useState(false);
+  const [showSurvey, setShowSurvey] = useState(false);
   const [showCompensation, setShowCompensation] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -53,11 +55,20 @@ const Index = () => {
     );
   }
 
+  if (showSurvey) {
+    return (
+      <DisappointmentSurvey
+        setShowSurvey={setShowSurvey}
+        setShowCompensation={setShowCompensation}
+      />
+    );
+  }
+
   if (showFairness) {
     return (
       <FairnessCalendarScreen
         setShowFairness={setShowFairness}
-        setShowCompensation={setShowCompensation}
+        setShowSurvey={setShowSurvey}
       />
     );
   }

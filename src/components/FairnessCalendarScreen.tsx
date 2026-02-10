@@ -3,10 +3,10 @@ import Icon from '@/components/ui/icon';
 
 interface FairnessCalendarScreenProps {
   setShowFairness: Dispatch<SetStateAction<boolean>>;
-  setShowCompensation: Dispatch<SetStateAction<boolean>>;
+  setShowSurvey: Dispatch<SetStateAction<boolean>>;
 }
 
-const FairnessCalendarScreen = ({ setShowFairness, setShowCompensation }: FairnessCalendarScreenProps) => {
+const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey }: FairnessCalendarScreenProps) => {
   const generateCalendarDays = () => {
     const days = [];
     const today = new Date();
@@ -79,11 +79,17 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowCompensation }: Fairne
             </div>
           </div>
 
-          <div className="mt-4 px-4">
+          <div className="mt-4 px-4 space-y-3">
+            <button 
+              className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-2xl text-lg font-semibold"
+            >
+              билайн порадовал
+            </button>
+            
             <button 
               onClick={() => {
                 setShowFairness(false);
-                setShowCompensation(true);
+                setShowSurvey(true);
               }}
               className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 rounded-2xl text-lg font-semibold"
             >
