@@ -17,11 +17,11 @@ const Index = () => {
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     
     for (let i = 0; i < firstDay; i++) {
-      days.push({ day: null, active: false });
+      days.push({ day: null, active: false, isToday: false });
     }
     
     for (let i = 1; i <= daysInMonth; i++) {
-      days.push({ day: i, active: i <= 7 });
+      days.push({ day: i, active: i <= 7, isToday: i === 8 });
     }
     
     return days;
@@ -232,11 +232,11 @@ const Index = () => {
                 {generateCalendarDays().map((item, index) => (
                   <div key={index} className="flex items-center justify-center">
                     {item.day ? (
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium relative ${
                         item.active 
                           ? 'bg-green-500 text-white' 
                           : 'bg-[#2a2a2a] text-gray-400'
-                      }`}>
+                      } ${item.isToday ? 'ring-2 ring-yellow-400 ring-offset-2 ring-offset-[#1a1a1a]' : ''}`}>
                         {item.day}
                       </div>
                     ) : (
