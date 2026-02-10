@@ -3,10 +3,10 @@ import Icon from '@/components/ui/icon';
 
 interface CompensationScreenProps {
   setShowCompensation: Dispatch<SetStateAction<boolean>>;
-  setShowFeedback: Dispatch<SetStateAction<boolean>>;
+  setShowSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
-const CompensationScreen = ({ setShowCompensation, setShowFeedback }: CompensationScreenProps) => {
+const CompensationScreen = ({ setShowCompensation, setShowSuccess }: CompensationScreenProps) => {
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white">
       <div className="max-w-md mx-auto px-4 py-6">
@@ -37,7 +37,7 @@ const CompensationScreen = ({ setShowCompensation, setShowFeedback }: Compensati
             <button 
               onClick={() => {
                 setShowCompensation(false);
-                setShowFeedback(true);
+                setShowSuccess(true);
               }}
               className="w-full bg-white text-black py-4 rounded-2xl text-lg font-semibold mb-4"
             >

@@ -50,7 +50,7 @@ const Index = () => {
     return (
       <CompensationScreen
         setShowCompensation={setShowCompensation}
-        setShowFeedback={setShowFeedback}
+        setShowSuccess={setShowSuccess}
       />
     );
   }
