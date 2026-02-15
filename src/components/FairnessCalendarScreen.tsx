@@ -82,9 +82,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center flex-shrink-0">
                   <Icon name="Gift" size={24} className="text-white" />
                 </div>
-                <p className="text-sm text-gray-200 leading-snug">
-                  До подарка осталось <span className="font-bold text-white">20</span> классных дней
-                </p>
+                <p className="text-sm text-gray-200 leading-snug">Вы с нами уже 7 классных дней подряд!</p>
               </div>
             </div>
 
