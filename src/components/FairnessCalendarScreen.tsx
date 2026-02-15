@@ -54,6 +54,15 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                 Оценивайте нас каждый день: ваши отзывы помогают нам исправлять ошибки, и дарят вам бонусы. Если мы подвели - сразу вернем деньги за сутки
               </p>
             </div>
+
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-2xl p-4 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+                  <Icon name="Gift" size={24} className="text-white" />
+                </div>
+                <p className="text-sm text-gray-200 leading-snug">Вы с нами уже 7 классных дней подряд!</p>
+              </div>
+            </div>
             
             <h2 className="text-2xl font-bold mb-2">Февраль 2026</h2>
             <div className="grid grid-cols-7 gap-2 text-xs text-gray-400 mb-4">
@@ -103,15 +112,6 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                   )}
                 </div>
               ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-2xl p-4 mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Gift" size={24} className="text-white" />
-                </div>
-                <p className="text-sm text-gray-200 leading-snug">Вы с нами уже 7 классных дней подряд!</p>
-              </div>
             </div>
 
             <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-2xl p-4 mb-4">
