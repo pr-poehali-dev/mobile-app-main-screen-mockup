@@ -117,9 +117,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                 setShowSurvey(true);
               }}
               className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 rounded-2xl text-lg font-semibold"
-            >
-              билайн огорчил
-            </button>
+            >сообщить о проблеме</button>
           </div>
         </div>
       </div>
