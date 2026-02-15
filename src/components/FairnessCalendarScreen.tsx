@@ -4,10 +4,10 @@ import Icon from '@/components/ui/icon';
 interface FairnessCalendarScreenProps {
   setShowFairness: Dispatch<SetStateAction<boolean>>;
   setShowSurvey: Dispatch<SetStateAction<boolean>>;
-  setShowHappy: Dispatch<SetStateAction<boolean>>;
+  setShowHappySurvey: Dispatch<SetStateAction<boolean>>;
 }
 
-const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappy }: FairnessCalendarScreenProps) => {
+const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySurvey }: FairnessCalendarScreenProps) => {
   const generateCalendarDays = () => {
     const days = [];
     const today = new Date();
@@ -104,7 +104,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappy }
             <button 
               onClick={() => {
                 setShowFairness(false);
-                setShowHappy(true);
+                setShowHappySurvey(true);
               }}
               className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-2xl text-lg font-semibold"
             >

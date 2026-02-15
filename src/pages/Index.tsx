@@ -6,6 +6,7 @@ import CompensationScreen from '@/components/CompensationScreen';
 import FeedbackScreen from '@/components/FeedbackScreen';
 import SuccessScreen from '@/components/SuccessScreen';
 import HappyScreen from '@/components/HappyScreen';
+import HappySurvey from '@/components/HappySurvey';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -15,6 +16,7 @@ const Index = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showHappy, setShowHappy] = useState(false);
+  const [showHappySurvey, setShowHappySurvey] = useState(false);
   const [selectedReasons, setSelectedReasons] = useState<string[]>([]);
 
   const toggleReason = (reason: string) => {
@@ -30,6 +32,15 @@ const Index = () => {
       <HappyScreen
         setShowHappy={setShowHappy}
         setShowFairness={setShowFairness}
+      />
+    );
+  }
+
+  if (showHappySurvey) {
+    return (
+      <HappySurvey
+        setShowHappySurvey={setShowHappySurvey}
+        setShowHappy={setShowHappy}
       />
     );
   }
@@ -80,7 +91,7 @@ const Index = () => {
       <FairnessCalendarScreen
         setShowFairness={setShowFairness}
         setShowSurvey={setShowSurvey}
-        setShowHappy={setShowHappy}
+        setShowHappySurvey={setShowHappySurvey}
       />
     );
   }
