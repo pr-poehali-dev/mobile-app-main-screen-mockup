@@ -17,11 +17,21 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     
     for (let i = 0; i < firstDay; i++) {
-      days.push({ day: null, active: false, isToday: false, isCrownDay: false });
+      days.push({ day: null, active: false, isToday: false, giftType: null });
     }
     
     for (let i = 1; i <= daysInMonth; i++) {
-      days.push({ day: i, active: i <= 7, isToday: i === 8, isCrownDay: i === 28 });
+      let giftType = null;
+      if (i === 3) giftType = 'small';
+      if (i === 7) giftType = 'medium';
+      if (i === 28) giftType = 'super';
+      
+      days.push({ 
+        day: i, 
+        active: i <= 7, 
+        isToday: i === 8, 
+        giftType 
+      });
     }
     
     return days;
@@ -55,9 +65,17 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                 <div key={index} className="flex items-center justify-center">
                   {item.day ? (
                     <div className="relative">
-                      {item.isCrownDay && (
+                      {item.giftType && (
                         <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
-                          <Icon name="Crown" size={16} className="text-yellow-400" />
+                          {item.giftType === 'small' && (
+                            <Icon name="Sticker" size={14} className="text-blue-400" />
+                          )}
+                          {item.giftType === 'medium' && (
+                            <Icon name="Gift" size={14} className="text-purple-400" />
+                          )}
+                          {item.giftType === 'super' && (
+                            <Icon name="Crown" size={16} className="text-yellow-400" />
+                          )}
                         </div>
                       )}
                       <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium relative ${
@@ -65,7 +83,11 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                           ? 'bg-green-500 text-white' 
                           : 'bg-[#2a2a2a] text-gray-400'
                       } ${item.isToday ? 'ring-2 ring-yellow-400 ring-offset-2 ring-offset-[#1a1a1a]' : ''} ${
-                        item.isCrownDay ? 'ring-2 ring-yellow-400' : ''
+                        item.giftType === 'small' ? 'ring-2 ring-blue-400' : ''
+                      } ${
+                        item.giftType === 'medium' ? 'ring-2 ring-purple-400' : ''
+                      } ${
+                        item.giftType === 'super' ? 'ring-2 ring-yellow-400' : ''
                       }`}>
                         {item.day}
                       </div>
