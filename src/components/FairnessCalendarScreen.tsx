@@ -23,7 +23,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
     for (let i = 1; i <= daysInMonth; i++) {
       let giftType = null;
       if (i === 3) giftType = 'small';
-      if (i === 7) giftType = 'medium';
+      if (i === 10) giftType = 'medium';
       if (i === 28) giftType = 'super';
       
       days.push({ 
@@ -49,6 +49,12 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
 
         <div className="px-4 py-6">
           <div className="text-center mb-6">
+            <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 border border-gray-500/30 rounded-2xl p-4 mb-6">
+              <p className="text-sm text-gray-200 leading-relaxed">
+                Оценивайте нас каждый день: ваши отзывы помогают нам исправлять ошибки, и дарят вам бонусы. Если мы подвели - сразу вернем деньги за сутки
+              </p>
+            </div>
+            
             <h2 className="text-2xl font-bold mb-2">Февраль 2026</h2>
             <div className="grid grid-cols-7 gap-2 text-xs text-gray-400 mb-4">
               <div>пн</div>
@@ -68,7 +74,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                       {item.giftType && (
                         <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
                           {item.giftType === 'small' && (
-                            <Icon name="Sticker" size={14} className="text-blue-400" />
+                            <Icon name="Sticker" size={14} className="text-yellow-400" />
                           )}
                           {item.giftType === 'medium' && (
                             <Icon name="Gift" size={14} className="text-purple-400" />
@@ -83,7 +89,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
                           ? 'bg-green-500 text-white' 
                           : 'bg-[#2a2a2a] text-gray-400'
                       } ${item.isToday ? 'ring-2 ring-yellow-400 ring-offset-2 ring-offset-[#1a1a1a]' : ''} ${
-                        item.giftType === 'small' ? 'ring-2 ring-blue-400' : ''
+                        item.giftType === 'small' ? 'ring-2 ring-yellow-400' : ''
                       } ${
                         item.giftType === 'medium' ? 'ring-2 ring-purple-400' : ''
                       } ${
