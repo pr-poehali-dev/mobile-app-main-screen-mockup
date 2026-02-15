@@ -86,6 +86,17 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
               </div>
             </div>
 
+            <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-2xl p-4 mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                  <Icon name="Activity" size={24} className="text-white" />
+                </div>
+                <p className="text-sm text-gray-200 leading-snug">
+                  Сегодня вы скачали <span className="font-bold text-white">2 ГБ</span> и разговаривали <span className="font-bold text-white">25 минут</span>. Билайн работал для вас <span className="font-bold text-white">24 часа</span>
+                </p>
+              </div>
+            </div>
+
             <div className="bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-2xl p-4 mb-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
