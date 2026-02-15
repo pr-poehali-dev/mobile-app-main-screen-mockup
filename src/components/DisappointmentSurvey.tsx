@@ -70,7 +70,7 @@ const DisappointmentSurvey = ({ setShowSurvey, setShowCompensation }: Disappoint
                   <Icon name="Check" size={16} className="text-white" />
                 )}
               </div>
-              <span>Изменение условий тарифа</span>
+              <span>Наполнение тарифа</span>
             </button>
 
             <button
