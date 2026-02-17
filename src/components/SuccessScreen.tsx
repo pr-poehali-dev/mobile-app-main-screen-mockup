@@ -28,12 +28,8 @@ const SuccessScreen = ({
           
           <h2 className="text-2xl font-bold mb-4">Спасибо за обратную связь!</h2>
           
-          <p className="text-gray-400 text-lg leading-relaxed mb-4">
-            Мы обязательно учтём её, чтобы стать лучше для вас
-          </p>
-
-          <p className="text-gray-400 text-sm leading-relaxed mb-8">
-            Мы обязательно изучим ваш отзыв и свяжемся с вами при необходимости
+          <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            Мы обязательно учтём её, чтобы стать лучше для вас и свяжемся с вами при необходимости
           </p>
 
           <button 
