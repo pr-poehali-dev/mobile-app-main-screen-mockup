@@ -139,7 +139,7 @@ const MainScreen = ({ activeTab, setActiveTab, setShowFairness }: MainScreenProp
             onClick={() => setShowFairness(true)}
             className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl p-5 flex items-center justify-between"
           >
-            <span className="text-lg font-semibold text-slate-50">билайн - твой грин флаг</span>
+            <span className="text-lg font-semibold text-slate-50">календарь справделивости</span>
             <Icon name="ChevronRight" size={24} className="text-white" />
           </button>
         </div>
