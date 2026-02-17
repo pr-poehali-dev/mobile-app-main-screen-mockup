@@ -37,7 +37,7 @@ const DisappointmentSurvey = ({ setShowSurvey, setShowCompensation }: Disappoint
           </h2>
           
           <p className="text-gray-400 text-sm mb-6 leading-relaxed text-center">
-            Пожалуйста, выберите причину, чтобы мы могли вернуть вам бонусы
+            Пожалуйста, выберите причину, чтобы мы могли вернуть вам бонусные рубли на счёт билайна
           </p>
 
           <div className="space-y-3 mb-6">
