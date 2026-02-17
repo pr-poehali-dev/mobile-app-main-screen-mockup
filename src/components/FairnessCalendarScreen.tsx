@@ -43,7 +43,7 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
           <button onClick={() => setShowFairness(false)} className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center">
             <Icon name="ChevronLeft" size={24} />
           </button>
-          <h1 className="text-xl font-semibold">справедливость связи</h1>
+          <h1 className="text-xl font-semibold">календарь справедливости</h1>
         </div>
 
         <div className="px-4 py-6">
