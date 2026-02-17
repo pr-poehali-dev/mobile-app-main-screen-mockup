@@ -10,27 +10,19 @@ interface FairnessCalendarScreenProps {
 const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySurvey }: FairnessCalendarScreenProps) => {
   const generateCalendarDays = () => {
     const days = [];
-    const today = new Date();
-    const currentMonth = today.getMonth();
-    const currentYear = today.getFullYear();
-    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const firstDayOfWeek = 6;
+    const daysInMonth = 28;
     
-    for (let i = 0; i < firstDay; i++) {
-      days.push({ day: null, active: false, isToday: false, giftType: null });
+    for (let i = 0; i < firstDayOfWeek; i++) {
+      days.push({ day: null, active: false, isToday: false, isRed: false });
     }
     
     for (let i = 1; i <= daysInMonth; i++) {
-      let giftType = null;
-      if (i === 3) giftType = 'small';
-      if (i === 10) giftType = 'medium';
-      if (i === 28) giftType = 'super';
-      
       days.push({ 
         day: i, 
-        active: i <= 7, 
-        isToday: i === 8, 
-        giftType 
+        active: i < 17, 
+        isToday: i === 17,
+        isRed: i === 2 || i === 13
       });
     }
     
@@ -79,33 +71,14 @@ const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySu
               {generateCalendarDays().map((item, index) => (
                 <div key={index} className="flex items-center justify-center">
                   {item.day ? (
-                    <div className="relative">
-                      {item.giftType && (
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
-                          {item.giftType === 'small' && (
-                            <Icon name="Sticker" size={14} className="text-yellow-400" />
-                          )}
-                          {item.giftType === 'medium' && (
-                            <Icon name="Gift" size={14} className="text-purple-400" />
-                          )}
-                          {item.giftType === 'super' && (
-                            <Icon name="Crown" size={16} className="text-yellow-400" />
-                          )}
-                        </div>
-                      )}
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium relative ${
-                        item.active 
-                          ? 'bg-green-500 text-white' 
-                          : 'bg-[#2a2a2a] text-gray-400'
-                      } ${item.isToday ? 'ring-2 ring-yellow-400 ring-offset-2 ring-offset-[#1a1a1a]' : ''} ${
-                        item.giftType === 'small' ? 'ring-2 ring-yellow-400' : ''
-                      } ${
-                        item.giftType === 'medium' ? 'ring-2 ring-purple-400' : ''
-                      } ${
-                        item.giftType === 'super' ? 'ring-2 ring-yellow-400' : ''
-                      }`}>
-                        {item.day}
-                      </div>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+                      item.isRed
+                        ? 'bg-red-500 text-white'
+                        : item.active 
+                        ? 'bg-green-500 text-white' 
+                        : 'bg-[#2a2a2a] text-gray-400'
+                    } ${item.isToday ? 'ring-2 ring-yellow-400 ring-offset-2 ring-offset-[#1a1a1a]' : ''}`}>
+                      {item.day}
                     </div>
                   ) : (
                     <div className="w-10 h-10"></div>
