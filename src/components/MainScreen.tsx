@@ -139,7 +139,7 @@ const MainScreen = ({ activeTab, setActiveTab, setShowFairness }: MainScreenProp
             onClick={() => setShowFairness(true)}
             className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl p-5 flex items-center justify-between ring-4 ring-red-500"
           >
-            <span className="text-lg font-semibold text-slate-50">календарь справделивости</span>
+            <span className="text-lg font-semibold text-slate-50">календарь справедливости</span>
             <Icon name="ChevronRight" size={24} className="text-white" />
           </button>
         </div>
