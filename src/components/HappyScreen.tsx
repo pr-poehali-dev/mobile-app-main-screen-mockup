@@ -7,9 +7,9 @@ interface HappyScreenProps {
 }
 
 const HappyScreen = ({ setShowHappy, setShowFairness }: HappyScreenProps) => {
-  const handleGoHome = () => {
+  const handleGoToCalendar = () => {
     setShowHappy(false);
-    setShowFairness(false);
+    setShowFairness(true);
   };
 
   return (
@@ -31,10 +31,10 @@ const HappyScreen = ({ setShowHappy, setShowFairness }: HappyScreenProps) => {
           </p>
           
           <button 
-            onClick={handleGoHome}
+            onClick={handleGoToCalendar}
             className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 rounded-2xl text-lg font-semibold"
           >
-            Вернуться на главную
+            Вернуться к календарю
           </button>
         </div>
       </div>
