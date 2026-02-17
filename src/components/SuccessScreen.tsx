@@ -7,6 +7,7 @@ interface SuccessScreenProps {
   setShowCompensation: Dispatch<SetStateAction<boolean>>;
   setShowFairness: Dispatch<SetStateAction<boolean>>;
   setSelectedReasons: Dispatch<SetStateAction<string[]>>;
+  setDayRating: Dispatch<SetStateAction<'happy' | 'problem' | null>>;
 }
 
 const SuccessScreen = ({ 
@@ -14,7 +15,8 @@ const SuccessScreen = ({
   setShowFeedback, 
   setShowCompensation, 
   setShowFairness, 
-  setSelectedReasons 
+  setSelectedReasons,
+  setDayRating
 }: SuccessScreenProps) => {
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white flex items-center justify-center">
@@ -32,6 +34,7 @@ const SuccessScreen = ({
 
           <button 
             onClick={() => {
+              setDayRating('problem');
               setShowSuccess(false);
               setShowFeedback(false);
               setShowCompensation(false);

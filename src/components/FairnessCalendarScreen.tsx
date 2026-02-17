@@ -5,24 +5,31 @@ interface FairnessCalendarScreenProps {
   setShowFairness: Dispatch<SetStateAction<boolean>>;
   setShowSurvey: Dispatch<SetStateAction<boolean>>;
   setShowHappySurvey: Dispatch<SetStateAction<boolean>>;
+  dayRating: 'happy' | 'problem' | null;
 }
 
-const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySurvey }: FairnessCalendarScreenProps) => {
+const FairnessCalendarScreen = ({ setShowFairness, setShowSurvey, setShowHappySurvey, dayRating }: FairnessCalendarScreenProps) => {
   const generateCalendarDays = () => {
     const days = [];
     const firstDayOfWeek = 6;
     const daysInMonth = 28;
+    const currentDay = 17;
     
     for (let i = 0; i < firstDayOfWeek; i++) {
-      days.push({ day: null, active: false, isToday: false, isRed: false });
+      days.push({ day: null, active: false, isToday: false, isRed: false, isHappy: false });
     }
     
     for (let i = 1; i <= daysInMonth; i++) {
+      const isCurrentDay = i === currentDay;
+      const isRatedRed = isCurrentDay && dayRating === 'problem';
+      const isRatedGreen = isCurrentDay && dayRating === 'happy';
+      
       days.push({ 
         day: i, 
-        active: i < 17, 
-        isToday: i === 17,
-        isRed: i === 2 || i === 13
+        active: (i < currentDay) || isRatedGreen, 
+        isToday: isCurrentDay && !dayRating,
+        isRed: (i === 2 || i === 13) || isRatedRed,
+        isHappy: isRatedGreen
       });
     }
     

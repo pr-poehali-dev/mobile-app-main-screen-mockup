@@ -18,6 +18,7 @@ const Index = () => {
   const [showHappy, setShowHappy] = useState(false);
   const [showHappySurvey, setShowHappySurvey] = useState(false);
   const [selectedReasons, setSelectedReasons] = useState<string[]>([]);
+  const [dayRating, setDayRating] = useState<'happy' | 'problem' | null>(null);
 
   const toggleReason = (reason: string) => {
     setSelectedReasons(prev => 
@@ -32,6 +33,7 @@ const Index = () => {
       <HappyScreen
         setShowHappy={setShowHappy}
         setShowFairness={setShowFairness}
+        setDayRating={setDayRating}
       />
     );
   }
@@ -53,6 +55,7 @@ const Index = () => {
         setShowCompensation={setShowCompensation}
         setShowFairness={setShowFairness}
         setSelectedReasons={setSelectedReasons}
+        setDayRating={setDayRating}
       />
     );
   }
@@ -92,6 +95,7 @@ const Index = () => {
         setShowFairness={setShowFairness}
         setShowSurvey={setShowSurvey}
         setShowHappySurvey={setShowHappySurvey}
+        dayRating={dayRating}
       />
     );
   }

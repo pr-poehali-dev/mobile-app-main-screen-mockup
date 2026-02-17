@@ -4,10 +4,12 @@ import Icon from '@/components/ui/icon';
 interface HappyScreenProps {
   setShowHappy: Dispatch<SetStateAction<boolean>>;
   setShowFairness: Dispatch<SetStateAction<boolean>>;
+  setDayRating: Dispatch<SetStateAction<'happy' | 'problem' | null>>;
 }
 
-const HappyScreen = ({ setShowHappy, setShowFairness }: HappyScreenProps) => {
+const HappyScreen = ({ setShowHappy, setShowFairness, setDayRating }: HappyScreenProps) => {
   const handleGoToCalendar = () => {
+    setDayRating('happy');
     setShowHappy(false);
     setShowFairness(true);
   };
