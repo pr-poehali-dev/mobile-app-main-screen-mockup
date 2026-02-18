@@ -29,7 +29,7 @@ const HappyScreen = ({ setShowHappy, setShowFairness, setDayRating }: HappyScree
           </h1>
           
           <p className="text-gray-400 text-base leading-relaxed mb-8">
-            Ваша оценка важна для нас! Мы продолжим радовать вас качественным сервисом.
+            Ваша оценка важна для нас! Мы продолжим радовать вас качественным сервисом. Оцените нас еще 4 раза, чтобы получить подарок.
           </p>
           
           <button 
